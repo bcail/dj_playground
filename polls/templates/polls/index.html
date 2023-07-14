@@ -1,0 +1,14 @@
+{% load static %}
+{% load compress %}
+<!DOCTYPE html>
+<html>
+  <body>
+    {% for q in questions %}
+      <p>{{ q.question_text }}</p>
+    {% endfor %}
+
+    {% compress js %}
+      <script src="{% static 'js/playground.js' %}" type="text/javascript" charset="utf-8"></script>
+    {% endcompress %}
+  </body>
+</html>
